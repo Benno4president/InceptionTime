@@ -27,7 +27,7 @@ def check_if_file_exits(file_name):
     return os.path.exists(file_name)
 
 
-def readucr(filename, delimiter=','):
+def readucr(filename, delimiter='\t'):
     data = np.loadtxt(filename, delimiter=delimiter)
     Y = data[:, 0]
     X = data[:, 1:]
@@ -72,19 +72,21 @@ def read_all_datasets(root_dir, archive_name):
 
     if archive_name == 'TSC':
         for dataset_name in DATASET_NAMES:
-            root_dir_dataset = root_dir + '/archives/' + archive_name + '/' + dataset_name + '/'
-            file_name = root_dir_dataset + dataset_name
-            x_train, y_train = readucr(file_name + '_TRAIN.tsv')
-            x_test, y_test = readucr(file_name + '_TEST.tsv')
+            try:
+                root_dir_dataset = root_dir + '/archives/' + archive_name + '/' + dataset_name + '/'
+                file_name = root_dir_dataset + dataset_name
+                x_train, y_train = readucr(file_name + '_TRAIN.tsv')
+                x_test, y_test = readucr(file_name + '_TEST.tsv')
 
-            datasets_dict[dataset_name] = (x_train.copy(), y_train.copy(), x_test.copy(),
-                                           y_test.copy())
+                datasets_dict[dataset_name] = (x_train.copy(), y_train.copy(), x_test.copy(),
+                                            y_test.copy())
 
-            dataset_names_to_sort.append((dataset_name, len(x_train)))
-
+                dataset_names_to_sort.append((dataset_name, len(x_train)))
+            except OSError as e:
+                print(e)
         dataset_names_to_sort.sort(key=operator.itemgetter(1))
 
-        for i in range(len(DATASET_NAMES)):
+        for i in range(len(dataset_names_to_sort)):
             DATASET_NAMES[i] = dataset_names_to_sort[i][0]
 
     elif archive_name == 'InlineSkateXPs':
