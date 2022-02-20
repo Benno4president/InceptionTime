@@ -1,4 +1,4 @@
-UNIVARIATE_DATASET_NAMES = ['Adiac', 'ArrowHead', 'Beef', 'BeetleFly', 'BirdChicken', 'Car', 'CBF',
+"""UNIVARIATE_DATASET_NAMES = ['Adiac', 'ArrowHead', 'Beef', 'BeetleFly', 'BirdChicken', 'Car', 'CBF',
                             'ChlorineConcentration', 'CinC_ECG_torso', 'Coffee',
                             'Computers', 'Cricket_X', 'Cricket_Y', 'Cricket_Z', 'DiatomSizeReduction',
                             'DistalPhalanxOutlineAgeGroup', 'DistalPhalanxOutlineCorrect', 'DistalPhalanxTW',
@@ -15,8 +15,9 @@ UNIVARIATE_DATASET_NAMES = ['Adiac', 'ArrowHead', 'Beef', 'BeetleFly', 'BirdChic
                             'synthetic_control', 'ToeSegmentation1', 'ToeSegmentation2', 'Trace', 'TwoLeadECG',
                             'Two_Patterns', 'UWaveGestureLibraryAll', 'uWaveGestureLibrary_X', 'uWaveGestureLibrary_Y',
                             'uWaveGestureLibrary_Z', 'wafer', 'Wine', 'WordsSynonyms', 'Worms', 'WormsTwoClass', 'yoga']
-
+"""
 # UNIVARIATE_DATASET_NAMES = ['Meat', 'Coffee']
+UNIVARIATE_DATASET_NAMES = ['PowerCons']
 
 UNIVARIATE_ARCHIVE_NAMES = ['TSC', 'InlineSkateXPs', 'SITS']
 UNIVARIATE_ARCHIVE_NAMES = ['TSC']
