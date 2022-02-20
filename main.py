@@ -40,11 +40,11 @@ def prepare_data():
     return x_train, y_train, x_test, y_test, y_true, nb_classes, y_true_train, enc
 
 
-def fit_classifier():
+def fit_classifier(verbose=False):
     input_shape = x_train.shape[1:]
 
     classifier = create_classifier(classifier_name, input_shape, nb_classes,
-                                   output_directory)
+                                   output_directory, verbose=verbose)
 
     classifier.fit(x_train, y_train, x_test, y_test, y_true)
 
@@ -114,7 +114,7 @@ if sys.argv[1] == 'InceptionTime':
                 print('Already_done', tmp_output_directory, dataset_name)
                 continue
 
-            fit_classifier()
+            fit_classifier(verbose=True)
 
             print('\t\t\t\tDONE')
 
