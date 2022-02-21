@@ -1,4 +1,13 @@
+import numpy as np
+import sys
+import sklearn
+
+#sys.path.append("utils/")
+
+
+import utils
 from utils.constants import UNIVARIATE_ARCHIVE_NAMES as ARCHIVE_NAMES
+#ARCHIVE_NAMES = ['TSC']
 
 from utils.utils import read_all_datasets
 from utils.utils import transform_labels
@@ -6,10 +15,7 @@ from utils.utils import create_directory
 from utils.utils import run_length_xps
 from utils.utils import generate_results_csv
 
-import utils
-import numpy as np
-import sys
-import sklearn
+
 
 
 def prepare_data():

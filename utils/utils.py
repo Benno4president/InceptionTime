@@ -15,7 +15,9 @@ import operator
 import utils
 
 from utils.constants import UNIVARIATE_DATASET_NAMES as DATASET_NAMES
+# DATASET_NAMES = ['PowerCons']
 from utils.constants import UNIVARIATE_ARCHIVE_NAMES  as ARCHIVE_NAMES
+# ARCHIVE_NAMES = ['TSC']
 
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
